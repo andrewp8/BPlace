@@ -1,44 +1,44 @@
-const { REPLACEMEs } = require('../models/REPLACEME.model');
+const { areas } = require('../models/area.model');
 module.exports = {
   getAll: (req, res) => {
-    REPLACEMEs.find()
-      .then(allREPLACEMEs => {
-        res.json(allREPLACEMEs)
+    areas.find()
+      .then(allAreas => {
+        res.json(allAreas)
       })
       .catch(err => {
         res.status(400).json({ message: 'Something went wrong', error: err })
       });
   },
   getOne: (req, res) => {
-    REPLACEMEs.findOne({ _id: req.params.id })
-      .then(REPLACEME => {
-        res.json(REPLACEME)
+    areas.findOne({ _id: req.params.id })
+      .then(area => {
+        res.json(area)
       })
       .catch(err => {
         res.status(400).json({ message: 'Something went wrong', error: err })
       });
   },
   create: (req, res) => {
-    REPLACEMEs.create(req.body)
-      .then(REPLACEME => res.json(REPLACEME))
+    areas.create(req.body)
+      .then(area => res.json(area))
       .catch(err => {
         res.status(400).json({ message: 'Something went wrong', error: err })
       })
   },
   update: (req, res) => {
-    REPLACEMEs.findOneAndUpdate({ _id: req.params.id }, req.body, {
+    areas.findOneAndUpdate({ _id: req.params.id }, req.body, {
       new: true,
       runValidators: true,
     })
-      .then(updatedREPLACEME => {
-        res.json(updatedREPLACEME)
+      .then(updatedArea => {
+        res.json(updatedArea)
       })
       .catch(err => {
         res.status(400).json({ message: 'Something went wrong', error: err })
       })
   },
   delete: (req, res) => {
-    REPLACEMEs.deleteOne({ _id: req.params.id })
+    areas.deleteOne({ _id: req.params.id })
       .then(delConfirm => {
         res.json(delConfirm);
       })

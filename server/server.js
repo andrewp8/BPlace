@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-require('./routes/REPLACEME.routes')(app);
+require('./routes/property.routes')(app);
+require('./routes/area.routes')(app);
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));
