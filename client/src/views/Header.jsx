@@ -17,6 +17,12 @@ const Header = () => {
 			<div className="rightHeader">
 				<Navbar />
 				<h1>BPlace</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+					obcaecati alias eos eius ratione vitae dolorem officia culpa
+					praesentium molestiae libero maiores assumenda, repellat nesciunt
+					fugit error doloremque est vel!
+				</p>
 				<Paper
 					component="form"
 					sx={{
@@ -31,6 +37,11 @@ const Header = () => {
 						<SearchIcon />
 					</IconButton>
 				</Paper>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+					voluptas illo esse obcaecati velit enim cum nisi voluptatum? Animi
+					error soluta quidem deleniti tempora inventore!
+				</p>
 			</div>
 		</div>
 	);

@@ -10,16 +10,18 @@
   width: 50%;
 }
 
-.navIcon {
-  display: none;
-}
+
 
 h1 {
-  margin: 5% auto;
+  text-align: center;
 }
 
 form {
   margin: 5% auto;
+}
+
+p {
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -40,6 +42,10 @@ form {
   }
 
   form {
-    margin: 0 auto;
+    margin: 5% auto;
+  }
+
+  .rightHeader {
+    width: 37rem;
   }
 }
