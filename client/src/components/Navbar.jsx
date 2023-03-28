@@ -8,7 +8,7 @@ const Navbar = () => {
 	const [navToggleOpen, setNavToggleOpen] = useState(true);
 
 	return (
-		<nav className="nav">
+		<>
 			<div className="navbar">
 				<ul>
 					<li>
@@ -101,7 +101,7 @@ const Navbar = () => {
 					<MenuIcon />
 				</IconButton>
 			)}
-		</nav>
+		</>
 	);
 };
 

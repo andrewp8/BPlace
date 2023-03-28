@@ -25,6 +25,21 @@ li {
   list-style-type: none;
 }
 
+
+li {
+  transition: transform 0.3s ease-in-out;
+}
+
+li:hover {
+  font-weight: bolder;
+  transform: scale(1.2);
+  -webkit-backdrop-filter: blur(5px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+
+}
+
 .navToggler {
   display: none;
 }
