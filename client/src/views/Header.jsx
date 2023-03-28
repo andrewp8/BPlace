@@ -2,8 +2,10 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import "./css/Header.css";
 
-import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
+import SearchIcon from "@mui/icons-material/Search";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import IconButton from "@mui/material/IconButton";
 
 const Header = () => {
 	return (
@@ -14,14 +16,21 @@ const Header = () => {
 			/>
 			<div className="rightHeader">
 				<Navbar />
-				<Stack
-					direction="row"
-					sx={{ width: 500 }}
-					justifyItems="center"
-					alignContent="center"
+				<h1>BPlace</h1>
+				<Paper
+					component="form"
+					sx={{
+						p: "2px 4px",
+						display: "flex",
+						alignItems: "center",
+						width: 400,
+					}}
 				>
-					<TextField label="Search by zipcode" />
-				</Stack>
+					<InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search By Zip-code" />
+					<IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+						<SearchIcon />
+					</IconButton>
+				</Paper>
 			</div>
 		</div>
 	);

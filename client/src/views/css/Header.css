@@ -10,6 +10,18 @@
   width: 50%;
 }
 
+.navIcon {
+  display: none;
+}
+
+h1 {
+  margin: 5% auto;
+}
+
+form {
+  margin: 5% auto;
+}
+
 @media (max-width: 767px) {
   .header {
     display: block;
@@ -21,10 +33,13 @@
 
   .navIcon {
     height: 40px;
-    position: absolute;
-    /* top: 10px;
-    left: -50px; */
+    position: relative;
     top: -365px;
     left: 530px;
+    box-shadow: 2px 3px 5px black;
+  }
+
+  form {
+    margin: 0 auto;
   }
 }
