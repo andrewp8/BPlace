@@ -33,16 +33,16 @@ const Navbar = () => {
 				<IconButton
 					onMouseDown={() => setNavToggleOpen(!navToggleOpen)}
 					className="navIcon"
-					style={{ backgroundColor: "rgba(255, 255, 255, 0.41)" }}
+					style={{ backgroundColor: "rgba(255, 255, 255, 0.85)" }}
 				>
 					<MenuIcon />
 				</IconButton>
 			) : (
 				<div className="navToggler">
 					<ul>
-						<div className="navToggler_icon">
+						<div>
 							<IconButton onMouseDown={() => setNavToggleOpen(!navToggleOpen)}>
-								<MenuIcon />
+								<MenuIcon className="navToggler_icon" />
 							</IconButton>
 						</div>
 						<li>

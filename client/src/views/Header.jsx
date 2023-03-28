@@ -28,8 +28,7 @@ const Header = () => {
 					sx={{
 						p: "2px 4px",
 						display: "flex",
-						alignItems: "center",
-						width: 400,
+						width: "320px",
 					}}
 				>
 					<InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search By Zip-code" />
@@ -37,10 +36,10 @@ const Header = () => {
 						<SearchIcon />
 					</IconButton>
 				</Paper>
+				<h3>Luxury and modern design</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-					voluptas illo esse obcaecati velit enim cum nisi voluptatum? Animi
-					error soluta quidem deleniti tempora inventore!
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsum
+					mollitia modi odit, non autem.
 				</p>
 			</div>
 		</div>

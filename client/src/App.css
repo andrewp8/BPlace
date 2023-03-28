@@ -10,4 +10,13 @@ h1 {
   text-shadow: -2px 3px 8px grey;
 }
 
-/* ======== HEADER ======== */
+h1,
+h3 {
+  margin: 2%;
+}
+
+p {
+  margin: 0 30px 0 30px;
+}
+
+/* ========HEADER======== */

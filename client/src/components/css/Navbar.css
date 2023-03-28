@@ -33,10 +33,6 @@ li {
 li:hover {
   font-weight: bolder;
   transform: scale(1.2);
-  -webkit-backdrop-filter: blur(5px) saturate(200%);
-  background-color: rgba(255, 255, 255, 0.41);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
 
 }
 
@@ -44,16 +40,29 @@ li:hover {
   display: none;
 }
 
+.navIcon {
+  position: relative;
+  /* ! to move the icon in large screen out of site */
+  top: -200px;
+}
 
 @media (max-width: 767px) {
   .navbar {
     display: none;
   }
 
+  .navIcon {
+    height: 40px;
+    position: absolute;
+    top: -230px;
+    left: 87%;
+    box-shadow: 2px 3px 5px black;
+  }
+
   .navToggler {
     display: block;
     width: 30%;
-    height: 100%;
+    height: 100em;
     position: absolute;
     top: 0;
     right: 0;
@@ -62,26 +71,21 @@ li:hover {
 
     backdrop-filter: blur(5px) saturate(200%);
     -webkit-backdrop-filter: blur(5px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.41);
+    background-color: rgba(0, 0, 0, 0.800);
     border-radius: 12px 0 0 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: 3px 5px 8px grey;
   }
 
-
-
-  li {
-    transition: transform 0.3s ease-in-out;
+  .navToggler a {
+    color: rgba(255, 255, 255, 0.850);
   }
 
-  li:hover {
-    font-weight: bolder;
-    transform: scale(1.2);
-    -webkit-backdrop-filter: blur(5px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.41);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-
+  .navToggler_icon {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.850);
+    border-radius: 50%;
+    box-shadow: 2px 3px 5px grey;
   }
 
 }
