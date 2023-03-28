@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+}
+
+.header img {
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  .header img {
+    width: 100%;
+  }
+
+  .navIcon {
+    position: absolute;
+    top: 0;
+    left: -50px;
+  }
+}
