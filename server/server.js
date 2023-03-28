@@ -11,5 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 
 require('./routes/property.routes')(app);
 require('./routes/area.routes')(app);
+require('./routes/search.routes')(app);
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));
