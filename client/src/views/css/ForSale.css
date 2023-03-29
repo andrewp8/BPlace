@@ -1,0 +1,24 @@
+.nav {
+  display: flex;
+  /* justify-content: baseline;
+  align-items: baseline; */
+  justify-content: space-evenly;
+}
+
+.nav h3 {
+  margin: 0 2%;
+  background-color: rgba(0, 0, 0, 0.850);
+  color: rgba(255, 255, 255, 0.850);
+  padding: 1%;
+}
+
+.searchTools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2% 2% 2%;
+}
+
+.searchTools * {
+  flex: 1;
+}

@@ -5,12 +5,12 @@
 .navbar ul {
   display: flex;
   justify-content: space-evenly;
-
+  /* 
   backdrop-filter: blur(5px) saturate(200%);
   -webkit-backdrop-filter: blur(5px) saturate(200%);
   background-color: rgba(255, 255, 255, 0.41);
   border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: 3px 5px 8px grey;
+  box-shadow: 3px 5px 8px grey; */
 }
 
 a,
@@ -54,14 +54,15 @@ li:hover {
   .navIcon {
     height: 40px;
     position: absolute;
-    top: -230px;
-    left: 87%;
+    top: -190px;
+    left: 85%;
     box-shadow: 2px 3px 5px black;
   }
 
   .navToggler {
+    font-size: small;
     display: block;
-    width: 30%;
+    width: 40%;
     height: 100em;
     position: absolute;
     top: 0;

@@ -17,16 +17,24 @@ const footer = () => {
 				<div className="about">
 					<h4>About</h4>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-						ipsum ab! Labore numquam, inventore quibusdam necessitatibus
-						possimus corrupti sit dolorum obcaecati eum totam nesciunt
-						temporibus culpa ipsum, delectus fugit reiciendis.
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam,
+						quisquam laboriosam at recusandae nisi dolore.
 					</p>
 				</div>
 				<div className="links">
 					<h4>Quick Links</h4>
+					<ul>
+						<li>Terms</li>
+						<li>Privacy</li>
+						<li>Cookies</li>
+						<li>Licenses</li>
+						<li>Settings</li>
+					</ul>
 				</div>
-				<div className="chat">3</div>
+				<div className="conversation">
+					<h4>Conversation</h4>
+					<div className="chat"></div>
+				</div>
 			</div>
 			<div className="bottom">
 				<p>Copyright © 2023 All Rights Reserved by Andrew Pham.</p>

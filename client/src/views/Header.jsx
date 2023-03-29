@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import "./css/Header.css";
 
@@ -8,6 +8,12 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 
 const Header = () => {
+	const [searchValue, setSearchValue] = useState();
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(searchValue);
+		setSearchValue("");
+	};
 	return (
 		<div className="header">
 			<img
@@ -30,8 +36,14 @@ const Header = () => {
 						display: "flex",
 						width: "320px",
 					}}
+					onSubmit={handleSubmit}
 				>
-					<InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search By Zip-code" />
+					<InputBase
+						sx={{ ml: 1, flex: 1 }}
+						placeholder="Search By Zip-code"
+						onChange={(e) => setSearchValue(e.target.value)}
+						type="number"
+					/>
 					<IconButton type="button" sx={{ p: "10px" }} aria-label="search">
 						<SearchIcon />
 					</IconButton>
