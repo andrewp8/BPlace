@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import "./css/ForSale.css";
+import Card from "../components/Card";
+import "./css/Categories.css";
 import Avatar from "@mui/material/Avatar";
 
-import SearchIcon from "@mui/icons-material/Search";
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
 import SearchTools from "../components/SearchTools";
 
-const ForSale = () => {
+const Categories = () => {
 	return (
 		<div>
 			<div className="nav">
@@ -21,8 +18,9 @@ const ForSale = () => {
 				/>
 			</div>
 			<SearchTools />
+			<Card />
 		</div>
 	);
 };
 
-export default ForSale;
+export default Categories;

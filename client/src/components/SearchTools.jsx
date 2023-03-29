@@ -41,7 +41,7 @@ const SearchTools = () => {
 			{/* <Box sx={{ minWidth: 120 }}> */}
 			<Box sx={{ minWidth: 120 }}>
 				<FormControl fullWidth>
-					<InputLabel>Menu</InputLabel>
+					<InputLabel>Categories</InputLabel>
 					<Select label="menu">
 						<MenuItem>For Sale</MenuItem>
 						<MenuItem>For Rent</MenuItem>
