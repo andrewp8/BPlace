@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
+import Maps from "../components/Maps";
 import "./css/Categories.css";
 import Avatar from "@mui/material/Avatar";
 
@@ -27,8 +28,17 @@ const Categories = () => {
 				/>
 			</div>
 			<SearchTools />
-			<div className="cards">{prop}</div>
-			<div className="maps"></div>
+			<div className="container">
+				<div className="cards">
+					{properties &&
+						properties.map((property, idx) => (
+							<Card property={property} idx={idx} />
+						))}
+				</div>
+				<div className="maps">
+					<Maps />
+				</div>
+			</div>
 		</div>
 	);
 };

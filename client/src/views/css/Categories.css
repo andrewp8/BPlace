@@ -22,3 +22,17 @@
 .searchTools * {
   flex: 1;
 }
+
+.container {
+  display: flex;
+}
+
+.cards {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.maps {
+  width: 50%;
+}
