@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Card = () => {
+const Card = (props) => {
+	const [property, setProperty] = useState(second);
 	return <div className="card"></div>;
 };
 

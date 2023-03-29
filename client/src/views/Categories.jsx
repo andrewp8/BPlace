@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import "./css/Categories.css";
 import Avatar from "@mui/material/Avatar";
 
 import SearchTools from "../components/SearchTools";
+import axios from "axios";
 
 const Categories = () => {
+	const [properties, setProperties] = useState();
+	useEffect(() => {
+		axios
+			.get("http://localhost:8080/api/properties")
+			.then((res) => (console.log(res.data), setProperties(res.data)))
+			.catch((err) => console.log(err));
+	}, []);
+
 	return (
 		<div>
 			<div className="nav">
@@ -18,7 +27,8 @@ const Categories = () => {
 				/>
 			</div>
 			<SearchTools />
-			<Card />
+			<div className="cards">{prop}</div>
+			<div className="maps"></div>
 		</div>
 	);
 };
