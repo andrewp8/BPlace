@@ -1,0 +1,23 @@
+.footer {
+  margin: 2%;
+  border-top: 1px solid black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.850);
+  padding-top: 1%;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+  width: 33%;
+}
