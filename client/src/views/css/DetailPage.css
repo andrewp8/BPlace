@@ -1,0 +1,73 @@
+.images {
+  display: flex;
+}
+
+.images * {
+  margin: 1%;
+}
+
+.bigImage {
+  width: 50%;
+}
+
+.sideImages {
+  width: 50%;
+  display: block;
+}
+
+.sideImages img {
+  width: 100%;
+  height: 49%;
+}
+
+.primary_detail {
+  display: flex;
+  margin: 0 2% 2% 2%;
+}
+
+.material_detail {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5%;
+}
+
+.material_detail p,
+.price h3 {
+  margin: 0;
+}
+
+.price {
+  display: flex;
+  padding: 5px;
+  background-color: rgba(111, 255, 140, 0.533);
+  border-radius: 5px;
+
+}
+
+.area_detail {
+  flex: 2;
+  justify-content: flex-end;
+}
+
+.area {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: pink;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+.area h4 {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.850);
+}
+
+.area span {
+  color: orangered;
+}
+
+.description {
+  border-top: 1px solid black;
+}
