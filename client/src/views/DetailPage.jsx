@@ -33,7 +33,7 @@ const DetailPage = () => {
 			.get(`http://localhost:8080/api/areas/zipcode/${areaZipcode}`)
 			.then((res) => (console.log("areaInfo", res.data), setAreaInfo(res.data)))
 			.catch((err) => console.log("err from areaInfo", err));
-	}, [areaInfo]);
+	}, [areaZipcode]);
 	return (
 		<div className="detailPage">
 			<div className="nav">
