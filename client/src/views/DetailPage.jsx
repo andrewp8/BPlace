@@ -5,6 +5,7 @@ import SearchTools from "../components/SearchTools";
 import axios from "axios";
 import "./css/DetailPage.css";
 import Navbar from "../components/Navbar";
+import Chart from "../components/Chart";
 
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import BedIcon from "@mui/icons-material/Bed";
@@ -78,7 +79,7 @@ const DetailPage = () => {
 								<p>{propertyDetail.sqft} ft&sup2;</p>
 							</div>
 						</div>
-						<div className="area_detail">
+						{/* <div className="area_detail">
 							{areaInfo && (
 								<div className="area">
 									<h4>
@@ -107,11 +108,14 @@ const DetailPage = () => {
 									</h4>
 								</div>
 							)}
-						</div>
+						</div> */}
 					</div>
 					<div className="description">
 						<h3>Description</h3>
 						<p>{propertyDetail.description}</p>
+					</div>
+					<div className="criteriaChart">
+						<h3>{propertyDetail.state} Criteria</h3>
 					</div>
 				</div>
 			)}

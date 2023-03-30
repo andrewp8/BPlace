@@ -46,16 +46,13 @@ const Maps = (props) => {
 		}
 	}, [props.zipcode]);
 
-	const NEXT_PUBLIC_GOOGLE_MAPS_API_KEY =
-		"AIzaSyB9vLU56beaeHZY7fUqN6O8G86lMrL6_aQ";
-	// const NEXT_PUBLIC_GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-	// console.log("apikey", NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+	const API_KEY = process.env.REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 	const { isLoaded } = useLoadScript({
-		// googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-		googleMapsApiKey: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+		googleMapsApiKey: API_KEY,
 	});
 	if (!isLoaded) return <div>Loading...</div>;
-	return <Map lat={lat} lng={lng} />;
+
+	return lat && lng && <Map lat={lat} lng={lng} />;
 };
 
 export default Maps;
