@@ -18,7 +18,7 @@ const Navbar = () => {
 						<Link to="/categories">Categories</Link>
 					</li>
 					<li>
-						<Link to="/compare">Compare</Link>
+						<Link to="/favorite">Favorite</Link>
 					</li>
 					<li>
 						<Link to="/credential">Sign Up/Log in</Link>
@@ -49,7 +49,7 @@ const Navbar = () => {
 							<Link to="/categories">Categories</Link>
 						</li>
 						<li>
-							<Link to="/compare">Compare</Link>
+							<Link to="/favorite">Favorite</Link>
 						</li>
 						<li>
 							<Link to="/credential">Sign Up/Log in</Link>

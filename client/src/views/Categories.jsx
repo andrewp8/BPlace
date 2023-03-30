@@ -11,7 +11,7 @@ import axios from "axios";
 const Categories = () => {
 	const [properties, setProperties] = useState();
 	const [mapZipcode, setMapZipcode] = useState();
-	const [favList, setFavList] = useState([]);
+
 	useEffect(() => {
 		axios
 			.get("http://localhost:8080/api/properties")
@@ -24,8 +24,10 @@ const Categories = () => {
 	};
 
 	const getFav = (id) => {
-		console.log("categories getfav ID", id);
-		setFavList(id);
+		axios
+			.post("http://localhost:8080/api/favorites", { favoriteId: id })
+			.then((res) => console.log(res.data))
+			.catch((err) => console.log(err));
 	};
 
 	return (
