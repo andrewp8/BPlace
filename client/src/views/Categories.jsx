@@ -11,6 +11,7 @@ import axios from "axios";
 const Categories = () => {
 	const [properties, setProperties] = useState();
 	const [mapZipcode, setMapZipcode] = useState();
+	const [favList, setFavList] = useState([]);
 	useEffect(() => {
 		axios
 			.get("http://localhost:8080/api/properties")
@@ -19,8 +20,12 @@ const Categories = () => {
 	}, []);
 
 	const zipcodeForMap = (zipcode) => {
-		console.log("catergoiry zipcodeMaop", zipcode);
 		setMapZipcode(zipcode);
+	};
+
+	const getFav = (id) => {
+		console.log("categories getfav ID", id);
+		setFavList(id);
 	};
 
 	return (
@@ -42,6 +47,7 @@ const Categories = () => {
 								propertyData={property}
 								idx={idx}
 								getZipcode={zipcodeForMap}
+								getFav={getFav}
 							/>
 						))}
 				</div>

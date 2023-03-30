@@ -65,7 +65,7 @@ const DetailPage = () => {
 					</div>
 					<div className="primary_detail">
 						<div className="material_detail">
-							<div className="price">
+							<div className="detail_price">
 								<LocalOfferIcon />
 								<h3>${propertyDetail.price.toLocaleString()}</h3>
 							</div>

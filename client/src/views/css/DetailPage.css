@@ -37,7 +37,7 @@
   margin: 0;
 }
 
-.price {
+.detail_price {
   display: flex;
   padding: 5px;
   background-color: rgba(111, 255, 140, 0.533);

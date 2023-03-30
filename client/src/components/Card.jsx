@@ -6,14 +6,19 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import BedIcon from "@mui/icons-material/Bed";
 import SquareFootIcon from "@mui/icons-material/SquareFoot";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+// import {red}
 
-const Card = ({ propertyData, getZipcode }) => {
+const Card = ({ propertyData, getZipcode, getFav }) => {
 	const [property, setProperty] = useState(propertyData);
 	const nav = useNavigate();
-	const showOnMap = (zipcode) => {
+	const showOnMap = (zcode) => {
 		console.log("testest zipcode");
-		console.log("showonmap", zipcode);
-		getZipcode(zipcode);
+		console.log("showonmap", zcode);
+		getZipcode(zcode);
+	};
+
+	const addFav = (id) => {
+		getFav(id);
 	};
 
 	return (
@@ -23,7 +28,7 @@ const Card = ({ propertyData, getZipcode }) => {
 					<button>New</button>
 					<button>For Sale</button>
 				</div>
-				<IconButton className="muiIcon">
+				<IconButton className="muiIcon" onClick={() => addFav(property._id)}>
 					<FavoriteIcon
 						sx={{
 							color: "pink",
@@ -39,7 +44,7 @@ const Card = ({ propertyData, getZipcode }) => {
 			<img src={property.imageUrls[0]} alt="" />
 			<p className="price">${property.price.toLocaleString()}</p>
 			<p className="address">{property.address}</p>
-			<p className="location" onClick={showOnMap(property.zipcode)}>
+			<p className="location" onClick={() => showOnMap(property.zipcode)}>
 				{property.state} {property.zipcode}
 			</p>
 			<div className="bottomIcons">
