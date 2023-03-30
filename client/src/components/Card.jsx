@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import "./css/Card.css";
+import { useNavigate, Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import BedIcon from "@mui/icons-material/Bed";
 import SquareFootIcon from "@mui/icons-material/SquareFoot";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-const Card = (props) => {
-	const [property, setProperty] = useState(props.property);
-
-	const showOnMap = () => {
-		console.log("show on map");
+const Card = ({ propertyData, getZipcode }) => {
+	const [property, setProperty] = useState(propertyData);
+	const nav = useNavigate();
+	const showOnMap = (zipcode) => {
+		console.log("testest zipcode");
+		console.log("showonmap", zipcode);
+		getZipcode(zipcode);
 	};
 
-	const goToDisplay = () => {
-		console.log("clicked");
-	};
 	return (
 		<div className="card">
 			<div className="cardNav">
@@ -39,7 +39,7 @@ const Card = (props) => {
 			<img src={property.imageUrls[0]} alt="" />
 			<p className="price">${property.price.toLocaleString()}</p>
 			<p className="address">{property.address}</p>
-			<p className="location" onClick={showOnMap}>
+			<p className="location" onClick={showOnMap(property.zipcode)}>
 				{property.state} {property.zipcode}
 			</p>
 			<div className="bottomIcons">
@@ -51,9 +51,11 @@ const Card = (props) => {
 					<SquareFootIcon />
 					<p>{property.sqft} ft&sup2;</p>
 				</div>
-				<div className="view" onClick={goToDisplay}>
-					<VisibilityIcon />
-					<p>View</p>
+				<div className="view">
+					<Link to={`/${property._id}`}>
+						<VisibilityIcon />
+						<p>View</p>
+					</Link>
 				</div>
 			</div>
 		</div>

@@ -18,6 +18,15 @@ module.exports = {
         res.status(400).json({ message: 'Something went wrong', error: err })
       });
   },
+  getByZipcode: (req, res) => {
+    areas.findOne({ zipcode: req.params.zipcode })
+      .then(areaByZipcode => {
+        res.json(areaByZipcode)
+      })
+      .catch(err => {
+        res.status(400).json({ message: 'Something went wrong', error: err })
+      });
+  },
   create: (req, res) => {
     areas.create(req.body)
       .then(area => res.json(area))

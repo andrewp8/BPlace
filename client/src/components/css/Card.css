@@ -13,7 +13,7 @@
   align-items: start;
   /* position: absolute; */
   position: relative;
-  top: 20%;
+  top: 15%;
 }
 
 /* .cardBtn {
@@ -107,6 +107,12 @@
   padding: 5px;
   background-color: rgba(228, 94, 174, 0.533);
   border-radius: 5px;
+}
+
+.view a {
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
 .view:hover {

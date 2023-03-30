@@ -10,12 +10,18 @@ import axios from "axios";
 
 const Categories = () => {
 	const [properties, setProperties] = useState();
+	const [mapZipcode, setMapZipcode] = useState();
 	useEffect(() => {
 		axios
 			.get("http://localhost:8080/api/properties")
 			.then((res) => (console.log(res.data), setProperties(res.data)))
 			.catch((err) => console.log(err));
 	}, []);
+
+	const zipcodeForMap = (zipcode) => {
+		console.log("catergoiry zipcodeMaop", zipcode);
+		setMapZipcode(zipcode);
+	};
 
 	return (
 		<div>
@@ -32,11 +38,15 @@ const Categories = () => {
 				<div className="cards">
 					{properties &&
 						properties.map((property, idx) => (
-							<Card property={property} idx={idx} />
+							<Card
+								propertyData={property}
+								idx={idx}
+								getZipcode={zipcodeForMap}
+							/>
 						))}
 				</div>
 				<div className="maps">
-					<Maps />
+					<Maps zipcode={mapZipcode} />
 				</div>
 			</div>
 		</div>
