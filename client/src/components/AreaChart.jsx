@@ -5,16 +5,17 @@ import { Chart as ChartJS } from "chart.js/auto"; //! this help clean up the can
 import axios from "axios";
 
 const AreaChart = ({ chartState, chartZipcode }) => {
-	const [areaZipcode, setAreaZipcode] = useState();
+	console.log("AreaChart", chartState, chartZipcode);
+	const [areaZipcode, setAreaZipcode] = useState(63141);
 	const [areaInfo, setAreaInfo] = useState();
 
 	useEffect(() => {
 		setAreaZipcode(chartZipcode);
-	}, [chartZipcode]);
+	}, [chartState]);
 
 	useEffect(() => {
 		console.log("second");
-		console.log("usedeffect ariaZipcode", areaZipcode);
+		console.log("useEffect ariaZipcode", areaZipcode);
 		axios
 			.get(`http://localhost:8080/api/areas/zipcode/${areaZipcode}`)
 			.then((res) => (console.log("areaInfo", res.data), setAreaInfo(res.data)))
@@ -31,7 +32,7 @@ const AreaChart = ({ chartState, chartZipcode }) => {
 					</p>
 					<p>
 						Livability:{" "}
-						<span className="livability">{areaInfo.livability}</span>
+						<span className="livability">{areaInfo.livability} / 100</span>
 					</p>
 					<Bar
 						data={{

@@ -6,11 +6,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import BedIcon from "@mui/icons-material/Bed";
 import SquareFootIcon from "@mui/icons-material/SquareFoot";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-// import {red}
+import CallIcon from "@mui/icons-material/Call";
 
 const Card = ({ propertyData, getZipcode, getFav, getChartData }) => {
 	const [property, setProperty] = useState(propertyData);
 	const nav = useNavigate();
+
 	const showOnMap = (zcode) => {
 		getZipcode(zcode);
 	};
@@ -23,12 +24,27 @@ const Card = ({ propertyData, getZipcode, getFav, getChartData }) => {
 		getChartData(state, zipcode);
 	};
 
+	const call = () => {
+		alert(
+			`You are calling for the property: \n${property.address}\n${property.state}, ${property.zipcode} \nSomeone will be with you shortly. Thank you for your patient.`
+		);
+	};
+
 	return (
-		<div className="card">
+		<div className="card" draggable>
 			<div className="cardNav">
 				<div className="cardBtn">
-					<button>New</button>
-					<button>For Sale</button>
+					<IconButton onClick={call}>
+						<CallIcon
+							sx={{
+								color: "primary.main",
+								backgroundColor: "white",
+								borderRadius: "25%",
+								"&:hover": { color: "#5783db" },
+							}}
+						/>
+					</IconButton>
+					<p>For Sale</p>
 				</div>
 				<IconButton className="muiIcon" onClick={() => addFav(property)}>
 					<FavoriteIcon

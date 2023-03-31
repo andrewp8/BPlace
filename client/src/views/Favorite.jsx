@@ -3,8 +3,11 @@ import Avatar from "@mui/material/Avatar";
 import SearchTools from "../components/SearchTools";
 import "./css/Favorite.css";
 import Navbar from "../components/Navbar";
+import Card from "../components/Card";
 
-const Favorite = ({ getFavList }) => {
+const Favorite = ({ favoriteList }) => {
+	console.log("from favorite", favoriteList);
+
 	return (
 		<div className="favorite">
 			<div className="nav">
@@ -16,7 +19,12 @@ const Favorite = ({ getFavList }) => {
 				/>
 			</div>
 			<SearchTools />
-			{<div className="favorite_container"></div>}
+			<div className="favorite_container">
+				{favoriteList &&
+					favoriteList.map((favorite, idx) => (
+						<Card propertyData={favorite} idx={idx} />
+					))}
+			</div>
 		</div>
 	);
 };

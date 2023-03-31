@@ -61,7 +61,7 @@ function Map({ lat, lng }) {
 	// const center = useMemo(() => ({ lat: lat, lng: lng }), []);
 	return (
 		<GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
-			<Marker position={center} />
+			{center && <Marker position={center} />}
 		</GoogleMap>
 	);
 }

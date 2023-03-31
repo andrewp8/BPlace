@@ -33,25 +33,19 @@
   left: 70px
 } */
 
+.cardBtn {
+  display: flex;
+}
 
-
-.cardBtn button {
+.cardBtn p {
   padding: 5px;
   color: rgba(255, 255, 255, 0.850);
   border: none;
   border-radius: 10px;
   margin: 0 5px;
   border: 2px solid white;
-  /* box-shadow: 3px 5px 10px black; */
-  cursor: pointer;
-}
-
-.cardBtn :first-child {
-  background-color: #ffbd03;
-}
-
-.cardBtn :last-child {
   background-color: #33b249;
+  cursor: pointer;
 }
 
 .card img {
