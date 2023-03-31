@@ -1,6 +1,12 @@
 .map-container {
-  width: 90%;
-  height: 40%;
+  /* width: 90%; */
+  height: 95%;
   border-radius: 25px;
   margin: 5% auto;
 }
+
+/* @media (max-width: 767px) {
+  .map-container {
+    width: 100%;
+  }
+} */

@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Avatar from "@mui/material/Avatar";
 import SearchTools from "../components/SearchTools";
-import axios from "axios";
 import "./css/Favorite.css";
 import Navbar from "../components/Navbar";
 
-const Favorite = () => {
-	const [favorites, setFavorites] = useState();
-	useEffect(() => {
-		axios
-			.get("http://localhost:8080/api/favorites")
-			.then((res) => (console.log(res.data), setFavorites(res.data)))
-			.catch((err) => console.log(err));
-	}, []);
-
+const Favorite = ({ getFavList }) => {
 	return (
 		<div className="favorite">
 			<div className="nav">
@@ -25,9 +16,7 @@ const Favorite = () => {
 				/>
 			</div>
 			<SearchTools />
-			{favorites && (
-				<div className="favorite_container">{favorites[0].favoriteId}</div>
-			)}
+			{<div className="favorite_container"></div>}
 		</div>
 	);
 };

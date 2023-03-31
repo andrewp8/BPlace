@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import AreaChart from "../components/AreaChart";
 import Card from "../components/Card";
 import Maps from "../components/Maps";
 import "./css/Categories.css";
@@ -8,9 +9,12 @@ import Avatar from "@mui/material/Avatar";
 import SearchTools from "../components/SearchTools";
 import axios from "axios";
 
-const Categories = () => {
+const Categories = ({ getFavs }) => {
 	const [properties, setProperties] = useState();
 	const [mapZipcode, setMapZipcode] = useState();
+	const [chartState, setChartState] = useState();
+	const [chartZipcode, setChartZipcode] = useState();
+	const [favList, setFavList] = useState([]);
 
 	useEffect(() => {
 		axios
@@ -19,15 +23,21 @@ const Categories = () => {
 			.catch((err) => console.log(err));
 	}, []);
 
+	useEffect(() => {
+		getFavs(favList);
+	}, [favList]);
+
 	const zipcodeForMap = (zipcode) => {
 		setMapZipcode(zipcode);
 	};
 
-	const getFav = (id) => {
-		axios
-			.post("http://localhost:8080/api/favorites", { favoriteId: id })
-			.then((res) => console.log(res.data))
-			.catch((err) => console.log(err));
+	const getFav = (favProperty) => {
+		setFavList([...favList, favProperty]);
+	};
+
+	const getChartData = (state, zipcode) => {
+		setChartState(state);
+		setChartZipcode(zipcode);
 	};
 
 	return (
@@ -50,11 +60,18 @@ const Categories = () => {
 								idx={idx}
 								getZipcode={zipcodeForMap}
 								getFav={getFav}
+								getChartData={getChartData}
 							/>
 						))}
 				</div>
-				<div className="maps">
-					<Maps zipcode={mapZipcode} />
+				<div className="mapNchart">
+					<div className="maps">
+						<Maps zipcode={mapZipcode} />
+					</div>
+					<div className="criteriaChart">
+						<h3>Area Criteria: {chartState}</h3>
+						<AreaChart chartState={chartState} chartZipcode={chartZipcode} />
+					</div>
 				</div>
 			</div>
 		</div>

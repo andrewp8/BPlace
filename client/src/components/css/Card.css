@@ -7,13 +7,17 @@
 }
 
 .cardNav {
-  /* margin: 0 5%; */
+  margin-top: 2%;
   display: flex;
   justify-content: space-between;
   align-items: start;
   /* position: absolute; */
-  position: relative;
-  top: 15%;
+  /* position: relative; */
+  /* top: 15%; */
+}
+
+.card_img {
+  border-radius: 0 !important;
 }
 
 /* .cardBtn {
@@ -64,22 +68,37 @@
 }
 
 .address,
-.location {
+.cart_state,
+.card_zipcode {
   font-size: small;
 }
 
-.location:hover {
+.cart_state:hover {
   font-weight: bolder;
+  font-size: medium;
+  color: rgb(255, 157, 0);
+  transition: color 0.5s ease;
+  transition: font-size 0.5s ease;
 }
 
-.location:active {
-  transform: translateY(3px);
+.card_zipcode:hover {
+  font-weight: bolder;
+  font-size: medium;
+  color: rgb(75, 163, 59);
+  transition: color 0.5s ease;
+  transition: font-size 0.5s ease;
 }
+
+/* .cart_state:active,
+.card_zipcode:active {
+  transform: translateY(3px);
+} */
 
 .bottomIcons {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5%;
+  /* margin-top: 5%; */
+  padding-bottom: 5%;
 }
 
 .bedroom {
@@ -122,4 +141,12 @@
 
 .view:active {
   transform: translateY(3px);
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 90vw;
+    margin-top: 10%;
+    margin-left: 10%;
+  }
 }

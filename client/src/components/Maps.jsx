@@ -3,7 +3,6 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import "./css/Maps.css";
 
 const Maps = (props) => {
-	console.log("in map component", props.zipcode);
 	const [lat, setLat] = useState();
 	const [lng, setLng] = useState();
 	useEffect(() => {
@@ -58,8 +57,8 @@ const Maps = (props) => {
 export default Maps;
 function Map({ lat, lng }) {
 	const center = { lat: lat, lng: lng };
+	// ! using useMemo doesn't work in this case
 	// const center = useMemo(() => ({ lat: lat, lng: lng }), []);
-	console.log("center", center);
 	return (
 		<GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
 			<Marker position={center} />

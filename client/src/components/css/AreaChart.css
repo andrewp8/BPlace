@@ -1,0 +1,13 @@
+.areaChart {
+  margin: 5% 2%;
+}
+
+.population {
+  font-weight: bolder;
+  color: rgb(255, 159, 64);
+}
+
+.livability {
+  font-weight: bolder;
+  color: rgb(255, 99, 132);
+}

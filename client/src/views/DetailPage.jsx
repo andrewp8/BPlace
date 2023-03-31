@@ -5,7 +5,6 @@ import SearchTools from "../components/SearchTools";
 import axios from "axios";
 import "./css/DetailPage.css";
 import Navbar from "../components/Navbar";
-import Chart from "../components/Chart";
 
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import BedIcon from "@mui/icons-material/Bed";
@@ -13,8 +12,8 @@ import SquareFootIcon from "@mui/icons-material/SquareFoot";
 
 const DetailPage = () => {
 	const [propertyDetail, setPropertyDetail] = useState();
-	const [areaZipcode, setAreaZipcode] = useState();
-	const [areaInfo, setAreaInfo] = useState();
+	// const [areaZipcode, setAreaZipcode] = useState();
+	// const [areaInfo, setAreaInfo] = useState();
 	const { id } = useParams();
 	useEffect(() => {
 		axios
@@ -22,19 +21,19 @@ const DetailPage = () => {
 			.then(
 				(res) => (
 					console.log("result from DetailPage", res.data),
-					setPropertyDetail(res.data),
-					setAreaZipcode(res.data.zipcode)
+					setPropertyDetail(res.data)
+					// setAreaZipcode(res.data.zipcode)
 				)
 			)
 			.catch((err) => console.log("err from DetailPage", err));
 	}, []);
 
-	useEffect(() => {
-		axios
-			.get(`http://localhost:8080/api/areas/zipcode/${areaZipcode}`)
-			.then((res) => (console.log("areaInfo", res.data), setAreaInfo(res.data)))
-			.catch((err) => console.log("err from areaInfo", err));
-	}, [areaZipcode]);
+	// useEffect(() => {
+	// 	axios
+	// 		.get(`http://localhost:8080/api/areas/zipcode/${areaZipcode}`)
+	// 		.then((res) => (console.log("areaInfo", res.data), setAreaInfo(res.data)))
+	// 		.catch((err) => console.log("err from areaInfo", err));
+	// }, [areaZipcode]);
 	return (
 		<div className="detailPage">
 			<div className="nav">
@@ -113,9 +112,6 @@ const DetailPage = () => {
 					<div className="description">
 						<h3>Description</h3>
 						<p>{propertyDetail.description}</p>
-					</div>
-					<div className="criteriaChart">
-						<h3>{propertyDetail.state} Criteria</h3>
 					</div>
 				</div>
 			)}

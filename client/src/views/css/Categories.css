@@ -33,6 +33,25 @@
   flex-wrap: wrap;
 }
 
-.maps {
+.mapNChart {
   width: 50%;
+}
+
+.maps {
+  width: 500px;
+  height: 500px;
+}
+
+@media (max-width: 767px) {
+
+  .container,
+  .cards,
+  .mapNChart {
+    display: block;
+  }
+
+  .maps {
+    width: 90vw;
+    margin-left: 5%;
+  }
 }

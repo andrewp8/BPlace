@@ -12,37 +12,38 @@ const AreaSchema = new mongoose.Schema({
   },
   livability: {
     type: Number,
-    required: [true, "Livability is required"]
+    required: [true, "Livability is required"],
+    max: [101, "Livability's point can't be over 100"]
   },
   amenities: {
-    type: String,
+    type: Number,
     required: [true, "Amenities is required"],
-    maxLength: [2, "Amenities's max length is 2 characters"]
+    max: [101, "Amenities's point can't be over 100"]
   },
   costOfLiving: {
-    type: String,
+    type: Number,
     required: [true, "Cost of living is required"],
-    maxLength: [2, "Cost of living's max length is 2 characters"]
+    max: [101, "Cost of living's point can't be over 100"]
   },
   crime: {
-    type: String,
+    type: Number,
     required: [true, "Crime is required"],
-    maxLength: [2, "Crime's max length is 2 characters"]
+    max: [101, "Crime's point can't be over 100"]
   },
   employment: {
-    type: String,
+    type: Number,
     required: [true, "Employment is required"],
-    maxLength: [2, "Employment's max length is 2 characters"]
+    max: [101, "Employment's point can't be over 100"]
   },
   housing: {
-    type: String,
+    type: Number,
     required: [true, "Housing is required"],
-    maxLength: [2, "Housing's max length is 2 characters"]
+    max: [101, "Housing's point can't be over 100"]
   },
   school: {
-    type: String,
+    type: Number,
     required: [true, "School is required"],
-    maxLength: [2, "School's max length is 2 characters"]
+    max: [101, "School's point can't be over 100"]
   },
 }, { timestamps: true });
 module.exports.areas = mongoose.model('areas', AreaSchema);
