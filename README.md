@@ -14,7 +14,7 @@
 - Additionally, users can view a chart that uses the ChartJS library to show livability grades and things to consider when moving to the state by clicking on the state abbreviation of each property card.
 
 ## Installation:
-** Front end **
+**Front end**
 <ol>
   <li> Navigate to your project folder</li>
   <li> Open terminal from the folder and run:
@@ -25,14 +25,14 @@
     </ul>
   </li>
 </ol>
-** Back end **
+**Back end**
 <ol>
   <li> Navigate to your project backend folder</li>
   <li> Open terminal from the folder and run:
     <ul>
       <li><code>npm init -y</code></li>
       <li><code>npm install nodemon express mongoose dotenv cors</code></li>
-      <li>Create ** .env ** file</li>
+      <li>Create **.env** file</li>
       <li><code>nodemon server.js</code></li>
     </ul>
   </li>
