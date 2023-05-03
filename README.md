@@ -33,7 +33,7 @@
     <ul>
       <li><code>npm init -y</code></li>
       <li><code>npm install nodemon express mongoose dotenv cors</code></li>
-      <li>Create **.env** file</li>
+      <li>Create .env file</li>
       <li><code>nodemon server.js</code></li>
     </ul>
   </li>
